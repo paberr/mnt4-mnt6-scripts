@@ -11,7 +11,7 @@ def biguint_num_bits(v):
 
 
 ### Convert BigUint into a vector of 64-bit limbs.
-def biguint_to_u64_vec(v, limbs):
+def biguint_to_u64_vec(v, limbs=0):
     v = Integer(v)
     m = 1 << 64
     ret = []
@@ -207,7 +207,7 @@ def to_montgomery(x, m, R):
     return (x * R) % m
 
 def to_montgomery_vec(x, fp):
-    mont = x * fp['r']
+    mont = (x * fp['r']) % fp['modulus']
     return biguint_to_u64_vec(mont, fp['limbs'])
 
 def constants_to_montgomery(c):

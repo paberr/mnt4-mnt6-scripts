@@ -48,7 +48,7 @@ print('G1 cofactor inv', G1_cofactor_inv)
 G2_order = 226502022472576270196498690498308461791828763717577836213694428486838284845848266994921634460577423496873194324622171087135390176549150010950410620094633001115253228252990372839425
 G2_cofactor = int(G2_order / r)
 print('G2 cofactor', G2_cofactor)
-print(to_montgomery_vec(Fr(G2_cofactor), fr))
+print(biguint_to_u64_vec(G2_cofactor))
 G2_cofactor_inv = Fr(G2_cofactor).inverse_of_unit()
 print('G2 cofactor inv', G2_cofactor_inv)
 print(to_montgomery_vec(G2_cofactor_inv, fr))

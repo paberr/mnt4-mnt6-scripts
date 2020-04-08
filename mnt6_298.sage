@@ -70,7 +70,7 @@ G2_order = 107797360357109903430794490309592072278927783178002957258386272738249
 G2_cofactor = int(G2_order / r)
 assert G2_cofactor == 226502022472576270196498690498308461791828762732602586162207535351960270082712694977333372361549082214519252261735048131889018501404377856786623430385820659037970876666767495659520
 print('G2 cofactor', G2_cofactor)
-print(to_montgomery_vec(Fr(G2_cofactor), fr))
+print(biguint_to_u64_vec(G2_cofactor))
 G2_cofactor_inv = Fr(G2_cofactor).inverse_of_unit()
 print('G2 cofactor inv', G2_cofactor_inv)
 print(to_montgomery_vec(G2_cofactor_inv, fr))
